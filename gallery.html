@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Our Work | Blackwood Group, Hawke's Bay</title>
+<meta name="description" content="A showcase of homes built by Blackwood Group in Hawke's Bay, including 127 and 153 Arataki Road, Havelock North. Quality craftsmanship in every detail.">
+<link rel="icon" type="image/png" href="assets/blackwood-logo-trans.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .gallery-grid a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    aspect-ratio: 3 / 2;
+    cursor: zoom-in;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+  .gallery-grid a:hover img { transform: scale(1.04); }
+
+  .project-head { margin: 0 0 28px; max-width: 720px; }
+  .project-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
+  .project-head p { color: var(--muted); }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 200;
+    background: rgba(8,8,8,0.96);
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    border-radius: 6px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  }
+  .lb-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 26px;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .lb-btn:hover { background: rgba(196,154,108,0.35); }
+  .lb-prev { left: 22px; }
+  .lb-next { right: 22px; }
+  .lb-close {
+    position: fixed;
+    top: 20px; right: 22px;
+    transform: none;
+    font-size: 20px;
+  }
+  .lb-count {
+    position: fixed;
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    color: #cfc9c0;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .gallery-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="assets/blackwood-logo-white.png" alt="Blackwood Group"></a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="new-builds.html">New Builds</a>
+      <a href="renovations.html">Renovations</a>
+      <a href="land-and-house-package.html">Land &amp; House Package</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cta" href="tel:+6421554842">021 554 842</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background-image:url('assets/gallery/p153-04.jpg')">
+  <div class="wrap">
+    <div class="kicker">Our Work</div>
+    <h1>A gallery of homes we're proud of</h1>
+    <p>Every home tells a story of craftsmanship, care and attention to detail. Here are two of ours, both in Havelock North.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="project-head">
+      <div class="kicker" style="color:var(--accent); text-transform:uppercase; letter-spacing:0.2em; font-size:12.5px; font-weight:600; margin-bottom:10px">Havelock North</div>
+      <h2>153 Arataki Road</h2>
+      <p>A resort-style pavilion home in schist and cedar — with an entertainer's kitchen, home theatre, outdoor fireplace and spa terrace set in landscaped grounds.</p>
+    </div>
+    <div class="gallery-grid" data-gallery="153">
+      <a href="assets/gallery/p153-01.jpg"><img src="assets/gallery/p153-01.jpg" alt="153 Arataki Road — gated entrance at dusk" loading="lazy"></a>
+      <a href="assets/gallery/p153-02.jpg"><img src="assets/gallery/p153-02.jpg" alt="153 Arataki Road — driveway and garage at dusk" loading="lazy"></a>
+      <a href="assets/gallery/p153-03.jpg"><img src="assets/gallery/p153-03.jpg" alt="153 Arataki Road — stone entrance gate" loading="lazy"></a>
+      <a href="assets/gallery/p153-04.jpg"><img src="assets/gallery/p153-04.jpg" alt="153 Arataki Road — house and lawn" loading="lazy"></a>
+      <a href="assets/gallery/p153-05.jpg"><img src="assets/gallery/p153-05.jpg" alt="153 Arataki Road — kitchen with island bench" loading="lazy"></a>
+      <a href="assets/gallery/p153-06.jpg"><img src="assets/gallery/p153-06.jpg" alt="153 Arataki Road — double-height living room" loading="lazy"></a>
+      <a href="assets/gallery/p153-07.jpg"><img src="assets/gallery/p153-07.jpg" alt="153 Arataki Road — fireplace lounge" loading="lazy"></a>
+      <a href="assets/gallery/p153-08.jpg"><img src="assets/gallery/p153-08.jpg" alt="153 Arataki Road — master bedroom" loading="lazy"></a>
+      <a href="assets/gallery/p153-09.jpg"><img src="assets/gallery/p153-09.jpg" alt="153 Arataki Road — home theatre" loading="lazy"></a>
+      <a href="assets/gallery/p153-10.jpg"><img src="assets/gallery/p153-10.jpg" alt="153 Arataki Road — spa terrace at dusk" loading="lazy"></a>
+      <a href="assets/gallery/p153-11.jpg"><img src="assets/gallery/p153-11.jpg" alt="153 Arataki Road — outdoor fireplace lounge" loading="lazy"></a>
+      <a href="assets/gallery/p153-12.jpg"><img src="assets/gallery/p153-12.jpg" alt="153 Arataki Road — pergola and gardens" loading="lazy"></a>
+      <a href="assets/gallery/p153-13.jpg"><img src="assets/gallery/p153-13.jpg" alt="153 Arataki Road — tiled bathroom" loading="lazy"></a>
+      <a href="assets/gallery/p153-14.jpg"><img src="assets/gallery/p153-14.jpg" alt="153 Arataki Road — scullery" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--panel); border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="project-head">
+      <div class="kicker" style="color:var(--accent); text-transform:uppercase; letter-spacing:0.2em; font-size:12.5px; font-weight:600; margin-bottom:10px">Havelock North</div>
+      <h2>127 Arataki Road</h2>
+      <p>A crisp contemporary family home pairing cedar and stacked stone with light-filled interiors — coffered ceilings, a striking black-tiled bathroom and seamless indoor-outdoor flow.</p>
+    </div>
+    <div class="gallery-grid" data-gallery="127">
+      <a href="assets/gallery/p127-01.jpg"><img src="assets/gallery/p127-01.jpg" alt="127 Arataki Road — front exterior and lawn" loading="lazy"></a>
+      <a href="assets/gallery/p127-02.jpg"><img src="assets/gallery/p127-02.jpg" alt="127 Arataki Road — gated entrance and garage" loading="lazy"></a>
+      <a href="assets/gallery/p127-03.jpg"><img src="assets/gallery/p127-03.jpg" alt="127 Arataki Road — backyard and house" loading="lazy"></a>
+      <a href="assets/gallery/p127-04.jpg"><img src="assets/gallery/p127-04.jpg" alt="127 Arataki Road — outdoor living deck" loading="lazy"></a>
+      <a href="assets/gallery/p127-05.jpg"><img src="assets/gallery/p127-05.jpg" alt="127 Arataki Road — open-plan dining and kitchen" loading="lazy"></a>
+      <a href="assets/gallery/p127-06.jpg"><img src="assets/gallery/p127-06.jpg" alt="127 Arataki Road — kitchen" loading="lazy"></a>
+      <a href="assets/gallery/p127-07.jpg"><img src="assets/gallery/p127-07.jpg" alt="127 Arataki Road — kitchen bench and range" loading="lazy"></a>
+      <a href="assets/gallery/p127-08.jpg"><img src="assets/gallery/p127-08.jpg" alt="127 Arataki Road — living room" loading="lazy"></a>
+      <a href="assets/gallery/p127-09.jpg"><img src="assets/gallery/p127-09.jpg" alt="127 Arataki Road — master bedroom with raked ceiling" loading="lazy"></a>
+      <a href="assets/gallery/p127-10.jpg"><img src="assets/gallery/p127-10.jpg" alt="127 Arataki Road — guest bedroom" loading="lazy"></a>
+      <a href="assets/gallery/p127-11.jpg"><img src="assets/gallery/p127-11.jpg" alt="127 Arataki Road — black-tiled bathroom" loading="lazy"></a>
+      <a href="assets/gallery/p127-12.jpg"><img src="assets/gallery/p127-12.jpg" alt="127 Arataki Road — freestanding bath" loading="lazy"></a>
+      <a href="assets/gallery/p127-13.jpg"><img src="assets/gallery/p127-13.jpg" alt="127 Arataki Road — home office" loading="lazy"></a>
+      <a href="assets/gallery/p127-14.jpg"><img src="assets/gallery/p127-14.jpg" alt="127 Arataki Road — sheltered patio" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Like what you see?</h2>
+    <p>Let's talk about bringing the same craftsmanship to your project.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-solid" href="tel:+6421554842">Phone Boris — 021 554 842</a>
+      <a class="btn btn-ghost" href="mailto:build@blackwoodgroup.nz">build@blackwoodgroup.nz</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img src="assets/blackwood-logo-white.png" alt="Blackwood Group">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="new-builds.html">New Builds</a>
+        <a href="renovations.html">Renovations</a>
+        <a href="land-and-house-package.html">Land &amp; House Package</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="foot-badges">
+        <a href="https://www.nzcb.nz/businesses/60190/" target="_blank" rel="noopener"><img src="assets/nzcb-logo.png" alt="NZCB member"></a>
+        <img src="assets/lbp-logo.png" alt="Licensed Building Practitioner">
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Blackwood Limited &mdash; Blackwood Group, Hawke's Bay, New Zealand &bull; <a href="mailto:build@blackwoodgroup.nz">build@blackwoodgroup.nz</a> &bull; 021 554 842</div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+  <button class="lb-btn lb-close" aria-label="Close" onclick="lbClose()">&#10005;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous" onclick="lbStep(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" aria-label="Next" onclick="lbStep(1)">&#8250;</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.gallery-grid a'));
+  var box = document.getElementById('lightbox');
+  var img = document.getElementById('lb-img');
+  var count = document.getElementById('lb-count');
+  var idx = 0;
+
+  function show(i) {
+    idx = (i + links.length) % links.length;
+    img.src = links[idx].href;
+    img.alt = links[idx].querySelector('img').alt;
+    count.textContent = (idx + 1) + ' / ' + links.length;
+  }
+
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      box.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      show(i);
+    });
+  });
+
+  window.lbClose = function () {
+    box.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  window.lbStep = function (d) { show(idx + d); };
+
+  box.addEventListener('click', function (e) { if (e.target === box) lbClose(); });
+  document.addEventListener('keydown', function (e) {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose();
+    if (e.key === 'ArrowLeft') lbStep(-1);
+    if (e.key === 'ArrowRight') lbStep(1);
+  });
+})();
+</script>
+
+</body>
+</html>

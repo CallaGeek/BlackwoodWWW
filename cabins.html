@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackwood Cabins — Cabin Hire Hawke's Bay | Blackwood Group</title>
+<meta name="description" content="Need more space? Hire a Blackwood Cabin — an insulated, fully lined portable cabin ideal as an extra bedroom, home office, guest room or studio. $150 per week, 12-month minimum. Hawke's Bay. Phone Boris on 021 554 842.">
+<link rel="icon" type="image/png" href="assets/blackwood-logo-trans.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .spec-table { width: 100%; border-collapse: collapse; margin: 28px 0 10px; font-size: 15.5px; }
+  .spec-table th, .spec-table td { text-align: left; padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
+  .spec-table th { width: 32%; color: var(--accent); font-weight: 600; font-family: 'Inter', sans-serif; white-space: nowrap; }
+  .spec-table td { color: #cfc9c0; }
+  .spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table .price td { color: #fff; font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; }
+
+  .swatches { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+  .swatch { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+  .swatch span { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.25); display: inline-block; }
+
+  .uses { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0 10px; }
+  .use { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 22px 18px; text-align: center; }
+  .use .ico { font-size: 26px; margin-bottom: 8px; }
+  .use h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .gallery-grid a { display: block; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3 / 2; cursor: zoom-in; }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+  .gallery-grid a:hover img { transform: scale(1.04); }
+
+  .lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(8,8,8,0.96); align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 6px; box-shadow: 0 20px 80px rgba(0,0,0,0.6); }
+  .lb-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 26px; width: 52px; height: 52px; border-radius: 50%; cursor: pointer; line-height: 1; }
+  .lb-btn:hover { background: rgba(196,154,108,0.35); }
+  .lb-prev { left: 22px; } .lb-next { right: 22px; }
+  .lb-close { position: fixed; top: 20px; right: 22px; transform: none; font-size: 20px; }
+  .lb-count { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); color: #cfc9c0; font-size: 14px; letter-spacing: 0.08em; }
+
+  @media (max-width: 900px) { .uses { grid-template-columns: repeat(2, 1fr); } .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .uses, .gallery-grid { grid-template-columns: 1fr; } .spec-table th { white-space: normal; width: 40%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="assets/blackwood-logo-white.png" alt="Blackwood Group"></a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="new-builds.html">New Builds</a>
+      <a href="renovations.html">Renovations</a>
+      <a href="cabins.html" class="active">Cabins</a>
+      <a href="land-and-house-package.html">Land &amp; House Package</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cta" href="tel:+6421554842">021 554 842</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero" style="background-image:url('assets/cabins/cabin-hero.jpg'); background-position:center 42%">
+  <div class="wrap">
+    <div class="kicker">Blackwood Cabins</div>
+    <h1>Need more space? Then hire a Blackwood Cabin</h1>
+    <p>An insulated, fully lined portable cabin — delivered to you and ready to use as an extra bedroom, office, guest room or studio.</p>
+    <div class="btn-row" style="margin-top:26px">
+      <span class="price-tag">$150 per week &bull; 12-month minimum</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap prose" style="max-width:860px">
+    <p>If you or someone you know is considering the need for additional space at home or in a work setting, we invite you to contact us regarding our cabin offerings. These units are well-suited for use as an extra bedroom, compact office, guest accommodation, or even a dedicated massage room from home. The potential applications are numerous.</p>
+
+    <div class="uses">
+      <div class="use"><div class="ico">&#128716;</div><h4>Extra bedroom</h4></div>
+      <div class="use"><div class="ico">&#128187;</div><h4>Compact office</h4></div>
+      <div class="use"><div class="ico">&#128273;</div><h4>Guest accommodation</h4></div>
+      <div class="use"><div class="ico">&#127807;</div><h4>Studio or massage room</h4></div>
+    </div>
+
+    <h2>Key features and specifications</h2>
+    <table class="spec-table">
+      <tr><th>Exterior dimensions</th><td>2830mm &times; 4900mm &times; 3100mm (W &times; L &times; H)</td></tr>
+      <tr><th>Interior dimensions</th><td>2390mm &times; 4080mm &times; 2610mm (W &times; L &times; H)</td></tr>
+      <tr><th>Available colours</th><td>Flax Pod (Black), Cloud (Off White), Sandstone Grey (Light Grey)
+        <div class="swatches">
+          <div class="swatch"><span style="background:#2b2b2b"></span>Flax Pod</div>
+          <div class="swatch"><span style="background:#e9e7e1"></span>Cloud</div>
+          <div class="swatch"><span style="background:#a3a5a4"></span>Sandstone Grey</div>
+        </div></td></tr>
+      <tr><th>Internal finish</th><td>Painted Gib board walls and ceiling; carpeted flooring</td></tr>
+      <tr><th>Electrical</th><td>All installations performed by a licensed electrician. Equipped with a caravan-style exterior plug for simple connectivity by Hirer.</td></tr>
+      <tr><th>Insulation</th><td>Comprehensive insulation in floor, walls, and ceiling</td></tr>
+      <tr><th>Windows</th><td>Features a large gable window and an opening end window (double-glazed, grey-tinted glass)</td></tr>
+      <tr><th>Window furnishings</th><td>Includes internal roller blinds</td></tr>
+      <tr><th>Exterior door</th><td>Lockable for security</td></tr>
+      <tr><th>Transportation</th><td>Arranged at Hirer&rsquo;s expense; relocation requires a Hiab truck</td></tr>
+      <tr><th>Foundation</th><td>Ideally the cabin needs to sit on piles and bearers, or a solid concrete pad, so that it is true and level (at Hirer&rsquo;s expense). We can assist here if need be.</td></tr>
+      <tr><th>Minimum rental term</th><td>12 months, followed by a periodic arrangement</td></tr>
+      <tr class="price"><th>Weekly hire rate</th><td>$150</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <p>We welcome your inquiries and look forward to assisting you with your space requirements.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--panel); border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:28px">
+      <div class="kicker">Gallery</div>
+      <h2>Blackwood Cabins in the field</h2>
+      <p>Built in Hawke's Bay, delivered by Hiab and set down ready to use.</p>
+    </div>
+    <div class="gallery-grid">
+      <a href="assets/cabins/cabin-01.jpg"><img src="assets/cabins/cabin-01.jpg" alt="Blackwood Cabins in Flax Pod black and Cloud white on a rural site" loading="lazy"></a>
+      <a href="assets/cabins/cabin-02.jpg"><img src="assets/cabins/cabin-02.jpg" alt="Blackwood Cabin being lifted into position by Hiab crane" loading="lazy"></a>
+      <a href="assets/cabins/cabin-03.jpg"><img src="assets/cabins/cabin-03.jpg" alt="Hiab truck delivering two Blackwood Cabins" loading="lazy"></a>
+      <a href="assets/cabins/cabin-04.jpg"><img src="assets/cabins/cabin-04.jpg" alt="Blackwood Cabin in Sandstone Grey with cedar entry and deck" loading="lazy"></a>
+      <a href="assets/cabins/cabin-05.jpg"><img src="assets/cabins/cabin-05.jpg" alt="Two Blackwood Cabins loaded on a truck for delivery" loading="lazy"></a>
+      <a href="assets/cabins/cabin-06.jpg"><img src="assets/cabins/cabin-06.jpg" alt="Blackwood Cabin in Cloud white with gable window and glazed door" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready for more room?</h2>
+    <p>Call Boris to check availability, talk through site requirements, or arrange a viewing.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn-solid" href="tel:+6421554842">Phone Boris — 021 554 842</a>
+      <a class="btn btn-ghost" href="mailto:build@blackwoodgroup.nz?subject=Blackwood%20Cabin%20enquiry">build@blackwoodgroup.nz</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img src="assets/blackwood-logo-white.png" alt="Blackwood Group">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="new-builds.html">New Builds</a>
+        <a href="renovations.html">Renovations</a>
+        <a href="cabins.html">Cabins</a>
+        <a href="land-and-house-package.html">Land &amp; House Package</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="foot-badges">
+        <a href="https://www.nzcb.nz/businesses/60190/" target="_blank" rel="noopener"><img src="assets/nzcb-logo.png" alt="NZCB member"></a>
+        <img src="assets/lbp-logo.png" alt="Licensed Building Practitioner">
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 Blackwood Limited &mdash; Blackwood Group, Hawke's Bay, New Zealand &bull; <a href="mailto:build@blackwoodgroup.nz">build@blackwoodgroup.nz</a> &bull; 021 554 842</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+  <button class="lb-btn lb-close" aria-label="Close" onclick="lbClose()">&#10005;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous" onclick="lbStep(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" aria-label="Next" onclick="lbStep(1)">&#8250;</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.gallery-grid a'));
+  var box = document.getElementById('lightbox'), img = document.getElementById('lb-img'), count = document.getElementById('lb-count'), idx = 0;
+  function show(i) { idx = (i + links.length) % links.length; img.src = links[idx].href; img.alt = links[idx].querySelector('img').alt; count.textContent = (idx + 1) + ' / ' + links.length; }
+  links.forEach(function (a, i) { a.addEventListener('click', function (e) { e.preventDefault(); box.classList.add('open'); document.body.style.overflow = 'hidden'; show(i); }); });
+  window.lbClose = function () { box.classList.remove('open'); document.body.style.overflow = ''; };
+  window.lbStep = function (d) { show(idx + d); };
+  box.addEventListener('click', function (e) { if (e.target === box) lbClose(); });
+  document.addEventListener('keydown', function (e) { if (!box.classList.contains('open')) return; if (e.key === 'Escape') lbClose(); if (e.key === 'ArrowLeft') lbStep(-1); if (e.key === 'ArrowRight') lbStep(1); });
+})();
+</script>
+
+</body>
+</html>

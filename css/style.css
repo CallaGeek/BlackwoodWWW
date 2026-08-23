@@ -418,3 +418,9 @@ footer { background: #0c0c0c; border-top: 1px solid var(--line); padding: 46px 0
 @media (max-width: 1100px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px) { .grid-5 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .grid-5 { grid-template-columns: 1fr; } }
+
+/* ---------- Video embeds ---------- */
+.video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); margin: 0 0 34px; background: #000; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-link { color: var(--muted); }
+.yt-link:hover { color: var(--accent); }
